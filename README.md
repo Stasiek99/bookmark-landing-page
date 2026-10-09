@@ -8,7 +8,7 @@
 ![Sass](https://img.shields.io/badge/Sass-BEM-cc6699?logo=sass&logoColor=white)
 ![Vitest](https://img.shields.io/badge/Testy-Vitest-6e9f18?logo=vitest&logoColor=white)
 
-<!-- Po deployu odkomentuj i uzupełnij: **Strony na żywo:** [React](https://adres-react) | [Angular](https://adres-angular) -->
+**Strony na żywo:** [React](https://bookmark-landing-react-stan.netlify.app) | [Angular](https://bookmark-landing-angular-stan.netlify.app)
 
 [🇬🇧 English](README.en.md) | 🇵🇱 Polski
 

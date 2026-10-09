@@ -10,7 +10,7 @@
 ![ESLint](https://img.shields.io/badge/angular--eslint-22-4b32c3?logo=eslint&logoColor=white)
 ![Prettier](https://img.shields.io/badge/Prettier-3-f7b93e?logo=prettier&logoColor=black)
 
-<!-- After deploying, uncomment and fill in: **Live site:** [app-url](https://app-url) -->
+**Live site:** [bookmark-landing-angular-stan.netlify.app](https://bookmark-landing-angular-stan.netlify.app)
 
 🇬🇧 English | [🇵🇱 Polski](README.md)
 
