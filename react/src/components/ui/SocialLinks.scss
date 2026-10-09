@@ -1,0 +1,20 @@
+@use '../../styles/variables' as *;
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.social-links__link {
+  display: flex;
+  align-items: center;
+  min-width: 24px;
+  min-height: 24px;
+  color: $white;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $red;
+  }
+}

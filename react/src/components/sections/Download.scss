@@ -1,0 +1,44 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.download {
+  padding-block: 75px;
+
+  @include up {
+    padding-block: 0 155px;
+  }
+}
+
+.download__inner {
+  @include container;
+}
+
+.download__cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+  margin-top: 45px;
+
+  @include up {
+    margin-top: 61px;
+  }
+
+  @include up($bp-desktop) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 34px;
+  }
+}
+
+.download__item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  @include up($bp-desktop) {
+    width: auto;
+    margin-top: calc(var(--offset) * 40px);
+  }
+}

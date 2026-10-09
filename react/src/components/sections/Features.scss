@@ -1,0 +1,23 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.features {
+  overflow: hidden;
+  padding-block: 71px 75px;
+
+  @include up {
+    padding-block: 16px 155px;
+  }
+}
+
+.features__inner {
+  @include container;
+}
+
+.features__tabs {
+  margin-top: 40px;
+
+  @include up {
+    margin-top: 38px;
+  }
+}

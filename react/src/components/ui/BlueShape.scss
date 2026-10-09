@@ -1,0 +1,18 @@
+@use '../../styles/variables' as *;
+
+.blue-shape {
+  position: absolute;
+  z-index: 0;
+  background: $blue;
+  pointer-events: none;
+}
+
+.blue-shape--left {
+  left: 0;
+  border-bottom-right-radius: 200px;
+}
+
+.blue-shape--right {
+  right: 0;
+  border-bottom-left-radius: 200px;
+}

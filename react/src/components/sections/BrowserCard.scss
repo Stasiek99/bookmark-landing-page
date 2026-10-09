@@ -1,0 +1,67 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.browser-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 280px;
+  padding: 43px 24px 24px;
+  border-radius: 14px;
+  background: $white;
+  box-shadow: 0 12px 30px -8px rgba($navy, 0.18);
+  text-align: center;
+
+  @include up {
+    width: 280px;
+    padding-top: 36px;
+  }
+}
+
+.browser-card__logo {
+  width: auto;
+  height: 100px;
+}
+
+.browser-card__name {
+  margin-top: 30px;
+  font-size: 20px;
+
+  @include up {
+    margin-top: 29px;
+  }
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.browser-card__version {
+  margin-top: 7px;
+  color: $grey;
+  font-size: 15px;
+
+  @include up {
+    margin-top: 8px;
+  }
+}
+
+.browser-card__button {
+  position: relative;
+  margin-top: 62px;
+  height: 48px;
+
+  @include up {
+    margin-top: 62px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -29px;
+    left: 50%;
+    width: 280px;
+    height: 4px;
+    background: url('../../assets/images/bg-dots.svg') center / contain no-repeat;
+    transform: translateX(-50%);
+  }
+}

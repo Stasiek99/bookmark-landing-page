@@ -1,0 +1,82 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.faq-item {
+  border-bottom: 1px solid hsl(229, 8%, 88%);
+
+  @include up {
+    &:first-child {
+      border-top: 1px solid hsl(229, 8%, 88%);
+    }
+  }
+}
+
+.faq-item__heading {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.faq-item__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 21px 0;
+  color: $navy;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: left;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $red;
+  }
+
+  @include up {
+    padding: 19px 24px 19px 0;
+    font-size: 18px;
+  }
+}
+
+.faq-item__arrow {
+  flex: none;
+  width: 18px;
+  height: 12px;
+  color: $blue;
+  transition:
+    transform 0.25s,
+    color 0.25s;
+}
+
+.faq-item--open .faq-item__arrow {
+  color: $red;
+  transform: rotate(180deg);
+}
+
+.faq-item__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-item--open .faq-item__panel {
+  grid-template-rows: 1fr;
+}
+
+.faq-item__panel-inner {
+  overflow: hidden;
+}
+
+.faq-item__answer {
+  padding: 10px 0 28px;
+  color: hsl(229, 10%, 36%);
+  font-size: 15px;
+  line-height: 2;
+
+  @include up {
+    padding: 14px 0 30px;
+    font-size: 16px;
+    line-height: 2.4;
+  }
+}
