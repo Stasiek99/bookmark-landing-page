@@ -1,0 +1,7 @@
+# Keep line endings as LF (Prettier's default) whichever platform the repo is edited on.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.woff binary
+*.woff2 binary

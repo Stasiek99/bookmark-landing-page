@@ -1,0 +1,14 @@
+# dependencies and build output
+node_modules/
+dist/
+.angular/
+
+# environment files (none are needed to build or run, but never commit them)
+.env
+.env.*
+
+# editors, OS, logs
+.idea/
+.DS_Store
+Thumbs.db
+*.log
