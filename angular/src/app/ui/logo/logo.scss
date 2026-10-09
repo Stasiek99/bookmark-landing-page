@@ -1,0 +1,40 @@
+@use 'variables' as *;
+
+:host {
+  display: inline-flex;
+}
+
+.logo {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.logo--dark {
+  --logo-badge: #{$blue};
+  --logo-mark: #{$white};
+  --logo-text: #{$navy};
+}
+
+.logo--light {
+  --logo-badge: #{$blue};
+  --logo-mark: #{$white};
+  --logo-text: #{$white};
+}
+
+.logo--inverted {
+  --logo-badge: #{$white};
+  --logo-mark: #{$navy};
+  --logo-text: #{$white};
+}
+
+.logo__badge {
+  fill: var(--logo-badge);
+}
+
+.logo__mark {
+  fill: var(--logo-mark);
+}
+
+.logo__text {
+  fill: var(--logo-text);
+}

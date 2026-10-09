@@ -1,0 +1,28 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:host {
+  display: block;
+}
+
+.features {
+  overflow: hidden;
+  padding-block: 71px 75px;
+
+  @include up {
+    padding-block: 16px 155px;
+  }
+}
+
+.features__inner {
+  @include container;
+}
+
+.features__tabs {
+  display: block;
+  margin-top: 40px;
+
+  @include up {
+    margin-top: 38px;
+  }
+}

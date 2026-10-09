@@ -1,0 +1,171 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:host {
+  display: block;
+}
+
+.header {
+  position: relative;
+  z-index: 10;
+}
+
+.header__inner {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 104px;
+
+  @include up {
+    height: 138px;
+  }
+}
+
+.header__logo,
+.header__toggle {
+  position: relative;
+  z-index: 2;
+}
+
+.header__toggle {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-right: -7px;
+  color: $navy;
+
+  @include up {
+    display: none;
+  }
+}
+
+.header__toggle--open {
+  --focus-ring: #{$white};
+  color: $white;
+}
+
+.header__nav {
+  --focus-ring: #{$white};
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 105px $gutter 48px;
+  background: rgba($navy, 0.94);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s,
+    visibility 0.25s;
+
+  @include up {
+    --focus-ring: #{$blue};
+    position: static;
+    display: block;
+    padding: 0;
+    background: none;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.header__nav--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header__list {
+  border-top: 1px solid rgba($white, 0.25);
+
+  @include up {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    border: 0;
+  }
+}
+
+.header__item {
+  border-bottom: 1px solid rgba($white, 0.25);
+  text-align: center;
+
+  &:last-child {
+    margin-top: 24px;
+    border: 0;
+  }
+
+  @include up {
+    border: 0;
+
+    &:last-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.header__link {
+  display: block;
+  padding: 0;
+  color: $white;
+  font-size: 19px;
+  line-height: 65px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $red;
+  }
+
+  @include up {
+    display: flex;
+    align-items: center;
+    min-height: 24px;
+    color: $navy;
+    font-size: 13px;
+    line-height: inherit;
+    letter-spacing: 1.5px;
+  }
+}
+
+a.header__login {
+  height: 48px;
+  border-color: $white;
+  background: transparent;
+  box-shadow: none;
+  font-size: 18px;
+  letter-spacing: 3px;
+
+  &:hover {
+    background: $white;
+    color: $navy;
+  }
+
+  @include up {
+    width: 112px;
+    height: 38px;
+    border-color: transparent;
+    background: $red;
+    box-shadow: 0 8px 8px -6px rgba($red, 0.5);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+
+    &:hover {
+      border-color: $red;
+      background: $white;
+      color: $red;
+    }
+  }
+}
+
+.header__social {
+  justify-content: center;
+
+  @include up {
+    display: none;
+  }
+}

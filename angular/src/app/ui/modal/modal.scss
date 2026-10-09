@@ -1,0 +1,65 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.modal {
+  width: min(1180px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: $white;
+  color: $navy;
+  overflow: auto;
+
+  &::backdrop {
+    background: rgba($navy, 0.7);
+  }
+
+  &[open] {
+    animation: modal-in 0.25s ease;
+  }
+}
+
+.modal__body {
+  --shape-bleed: 32px;
+  position: relative;
+  overflow: hidden;
+  padding: 72px $gutter 40px;
+
+  @include up {
+    padding: 56px 32px 40px;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: $navy;
+  color: $white;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: $red;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal[open] {
+    animation: none;
+  }
+}

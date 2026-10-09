@@ -1,0 +1,19 @@
+<div class="faq-item" [class.faq-item--open]="open()">
+  <h3 class="faq-item__heading">
+    <button
+      type="button"
+      class="faq-item__trigger"
+      [attr.aria-expanded]="open()"
+      [attr.aria-controls]="panelId"
+      (click)="toggled.emit()"
+    >
+      <span class="faq-item__question">{{ question() }}</span>
+      <app-icon class="faq-item__arrow" name="arrow" />
+    </button>
+  </h3>
+  <div class="faq-item__panel" role="region" [id]="panelId" [attr.aria-hidden]="!open()">
+    <div class="faq-item__panel-inner">
+      <p class="faq-item__answer">{{ answer() }}</p>
+    </div>
+  </div>
+</div>

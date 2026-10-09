@@ -1,0 +1,47 @@
+<header class="header" id="top" (mouseenter)="onMouseEnter()">
+  <div class="header__inner">
+    <app-logo class="header__logo" [variant]="menuOpen() ? 'inverted' : 'dark'" />
+
+    <button
+      #toggle
+      type="button"
+      class="header__toggle"
+      [class.header__toggle--open]="menuOpen()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="primary-navigation"
+      [attr.aria-label]="menuOpen() ? 'Close menu' : 'Open menu'"
+      (click)="toggleMenu()"
+    >
+      <app-icon [name]="menuOpen() ? 'close' : 'hamburger'" />
+    </button>
+
+    <nav
+      id="primary-navigation"
+      class="header__nav"
+      [class.header__nav--open]="menuOpen()"
+      aria-label="Primary"
+    >
+      <ul class="header__list">
+        @for (link of navLinks; track link.href) {
+          <li class="header__item">
+            <a class="header__link" [href]="link.href" (click)="closeMenu()">{{ link.label }}</a>
+          </li>
+        }
+        <li class="header__item">
+          <a
+            appButton
+            class="header__login"
+            href="#login"
+            variant="accent"
+            size="sm"
+            [fullWidth]="true"
+            (click)="closeMenu()"
+          >
+            Login
+          </a>
+        </li>
+      </ul>
+      <app-social-links class="header__social" [links]="socialLinks" />
+    </nav>
+  </div>
+</header>

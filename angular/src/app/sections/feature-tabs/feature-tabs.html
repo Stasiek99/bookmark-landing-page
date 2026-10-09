@@ -1,0 +1,44 @@
+<div class="feature-tabs">
+  <div class="feature-tabs__list" role="tablist" aria-label="Features">
+    @for (tab of tabs; track tab.id) {
+      <button
+        #tab
+        type="button"
+        role="tab"
+        class="feature-tabs__tab"
+        [class.feature-tabs__tab--active]="tab.id === activeId()"
+        [id]="baseId + '-tab-' + tab.id"
+        [attr.aria-selected]="tab.id === activeId()"
+        [attr.aria-controls]="baseId + '-panel'"
+        [tabindex]="tab.id === activeId() ? 0 : -1"
+        (click)="activeId.set(tab.id)"
+        (keydown)="onKeydown($event)"
+      >
+        {{ tab.label }}
+      </button>
+    }
+  </div>
+
+  <div
+    class="feature-tabs__panel"
+    role="tabpanel"
+    [id]="baseId + '-panel'"
+    [attr.aria-labelledby]="baseId + '-tab-' + activeTab().id"
+  >
+    <app-blue-shape side="left" class="feature-tabs__shape" />
+    <div class="feature-tabs__media">
+      <img
+        [src]="activeTab().image"
+        alt=""
+        [attr.width]="activeTab().imageWidth"
+        [attr.height]="activeTab().imageHeight"
+        [style.--scale]="imageScale()"
+      />
+    </div>
+    <div class="feature-tabs__content">
+      <h3 class="feature-tabs__title">{{ activeTab().title }}</h3>
+      <p class="feature-tabs__text">{{ activeTab().text }}</p>
+      <a appButton class="feature-tabs__cta" href="#more-info">More Info</a>
+    </div>
+  </div>
+</div>

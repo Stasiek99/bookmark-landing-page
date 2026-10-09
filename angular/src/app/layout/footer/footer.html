@@ -1,0 +1,17 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <app-logo variant="light" />
+      <nav aria-label="Footer">
+        <ul class="footer__list">
+          @for (link of navLinks; track link.href) {
+            <li>
+              <a class="footer__link" [href]="link.href">{{ link.label }}</a>
+            </li>
+          }
+        </ul>
+      </nav>
+    </div>
+    <app-social-links [links]="socialLinks" />
+  </div>
+</footer>

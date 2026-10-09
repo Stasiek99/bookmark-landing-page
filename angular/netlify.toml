@@ -1,0 +1,10 @@
+# Netlify build settings for the Angular version.
+# Monorepo: create the site with "Base directory" = angular (paths below are relative to it).
+
+[build]
+  command = "npm run build"
+  publish = "dist/bookmark-landing/browser"
+
+[build.environment]
+  # Angular 22 needs Node 22.12+; this is the version the project was developed on.
+  NODE_VERSION = "24"

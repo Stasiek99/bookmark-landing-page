@@ -1,0 +1,15 @@
+<ul class="social-links">
+  @for (link of links(); track link.id) {
+    <li>
+      <a
+        class="social-links__link"
+        [href]="link.href"
+        [attr.aria-label]="link.label + ' ' + newTabHint"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <app-icon [name]="link.id" />
+      </a>
+    </li>
+  }
+</ul>

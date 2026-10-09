@@ -1,0 +1,42 @@
+<section id="contact" class="newsletter" aria-labelledby="newsletter-title">
+  <div class="newsletter__inner">
+    <p class="newsletter__counter">
+      <span aria-hidden="true">{{ subscribers() | number }}+</span>
+      <span class="visually-hidden">Over 35,000</span> already joined
+    </p>
+    <h2 id="newsletter-title" class="newsletter__title">Stay up-to-date with what we’re doing</h2>
+
+    <form class="newsletter__form" novalidate (submit)="onSubmit($event)">
+      <div class="newsletter__field" [class.newsletter__field--error]="error()">
+        <label [for]="inputId" class="visually-hidden">Email address</label>
+        <input
+          #emailInput
+          [id]="inputId"
+          type="email"
+          name="email"
+          class="newsletter__input"
+          placeholder="Enter your email address"
+          autocomplete="email"
+          [value]="email()"
+          [attr.aria-invalid]="error()"
+          [attr.aria-describedby]="error() ? errorId : null"
+          (input)="onInput($event)"
+          (blur)="onBlur()"
+        />
+        @if (error()) {
+          <app-icon class="newsletter__error-icon" name="error" />
+          <p class="newsletter__error-message" role="alert" [id]="errorId">
+            Whoops, make sure it’s an email
+          </p>
+        }
+      </div>
+      <button appButton class="newsletter__submit" type="submit" variant="accent">
+        Contact Us
+      </button>
+    </form>
+
+    <p class="newsletter__success" role="status">
+      {{ submitted() ? 'Thanks! We’ll be in touch.' : '' }}
+    </p>
+  </div>
+</section>

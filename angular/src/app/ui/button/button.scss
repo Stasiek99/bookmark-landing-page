@@ -1,0 +1,77 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+:host(.button--md) {
+  height: 48px;
+  padding: 0 15px;
+  font-size: 14px;
+
+  @include up {
+    padding: 0 24px;
+  }
+}
+
+:host(.button--sm) {
+  height: 40px;
+  padding: 0 24px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+:host(.button--full) {
+  width: 100%;
+}
+
+:host(.button--primary) {
+  background: $blue;
+  color: $white;
+  box-shadow: 0 8px 8px -6px rgba($blue, 0.4);
+
+  &:hover {
+    background: $white;
+    border-color: $blue;
+    color: $blue;
+  }
+}
+
+:host(.button--secondary) {
+  background: hsl(0, 0%, 97%);
+  color: $navy;
+  box-shadow: 0 8px 8px -6px rgba($navy, 0.2);
+
+  &:hover {
+    background: $white;
+    border-color: $navy;
+    color: $navy;
+  }
+}
+
+:host(.button--accent) {
+  background: $red;
+  color: $white;
+  box-shadow: 0 8px 8px -6px rgba($red, 0.5);
+
+  &:hover {
+    background: $white;
+    border-color: $red;
+    color: $red;
+  }
+}

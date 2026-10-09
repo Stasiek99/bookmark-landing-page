@@ -1,0 +1,16 @@
+<section id="faq" class="faq" aria-labelledby="faq-title">
+  <div class="faq__inner">
+    <app-section-heading headingId="faq-title" [title]="intro.title" [text]="intro.text" />
+    <div class="faq__list">
+      @for (faq of faqs; track faq.id) {
+        <app-faq-item
+          [question]="faq.question"
+          [answer]="faq.answer"
+          [open]="openId() === faq.id"
+          (toggled)="toggle(faq.id)"
+        />
+      }
+    </div>
+    <a appButton class="faq__more" href="#more-info">More Info</a>
+  </div>
+</section>

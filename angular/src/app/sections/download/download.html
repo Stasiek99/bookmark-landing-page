@@ -1,0 +1,12 @@
+<section id="download" class="download" aria-labelledby="download-title">
+  <div class="download__inner">
+    <app-section-heading headingId="download-title" [title]="intro.title" [text]="intro.text" />
+    <ul class="download__cards">
+      @for (browser of browsers; track browser.name; let index = $index) {
+        <li class="download__item" [style.--offset]="index">
+          <app-browser-card [browser]="browser" />
+        </li>
+      }
+    </ul>
+  </div>
+</section>

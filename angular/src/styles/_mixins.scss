@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+@mixin up($bp: $bp-tablet) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container + $gutter * 2;
+  margin-inline: auto;
+  padding-inline: $gutter;
+}

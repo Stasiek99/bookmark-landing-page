@@ -1,0 +1,39 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:host {
+  display: block;
+}
+
+.section-heading {
+  max-width: 304px;
+  margin-inline: auto;
+  text-align: center;
+
+  @include up {
+    max-width: 540px;
+  }
+}
+
+.section-heading__title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+
+  @include up {
+    font-size: 32px;
+  }
+}
+
+.section-heading__text {
+  margin-top: 12px;
+  color: $grey;
+  font-size: 15px;
+  line-height: 1.6667;
+
+  @include up {
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+}

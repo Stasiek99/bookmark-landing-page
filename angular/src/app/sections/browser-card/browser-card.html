@@ -1,0 +1,20 @@
+<article class="browser-card">
+  <img
+    class="browser-card__logo"
+    [src]="browser().logo"
+    alt=""
+    [attr.width]="browser().width"
+    [attr.height]="browser().height"
+    loading="lazy"
+  />
+  <h3 class="browser-card__name">Add to {{ browser().name }}</h3>
+  <p class="browser-card__version">Minimum version {{ browser().version }}</p>
+  <a
+    appButton
+    class="browser-card__button"
+    [href]="'#' + browser().name.toLowerCase()"
+    [fullWidth]="true"
+  >
+    Add &amp; Install Extension
+  </a>
+</article>

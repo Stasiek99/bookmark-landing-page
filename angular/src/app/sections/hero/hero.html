@@ -1,0 +1,23 @@
+<section class="hero" aria-labelledby="hero-title">
+  <app-blue-shape side="right" class="hero__shape" />
+  <div class="hero__inner">
+    <div class="hero__media">
+      <img
+        [src]="hero.illustration"
+        alt="Bookmark browser extension showing a list of saved sites"
+        width="657"
+        height="466"
+        fetchpriority="high"
+      />
+    </div>
+
+    <div class="hero__content">
+      <h1 id="hero-title" class="hero__title">{{ hero.title }}</h1>
+      <p class="hero__text">{{ hero.text }}</p>
+      <div class="hero__actions">
+        <a appButton href="#chrome">Get it on Chrome</a>
+        <a appButton href="#firefox" variant="secondary">Get it on Firefox</a>
+      </div>
+    </div>
+  </div>
+</section>

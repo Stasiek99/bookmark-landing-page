@@ -1,0 +1,39 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+:host {
+  display: block;
+}
+
+.faq {
+  padding-block: 75px 123px;
+
+  @include up {
+    padding-block: 0 154px;
+  }
+}
+
+.faq__inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq__list {
+  width: 100%;
+  max-width: 542px;
+  margin-top: 51px;
+
+  @include up {
+    margin-top: 56px;
+  }
+}
+
+a.faq__more {
+  margin-top: 49px;
+
+  @include up {
+    margin-top: 52px;
+  }
+}

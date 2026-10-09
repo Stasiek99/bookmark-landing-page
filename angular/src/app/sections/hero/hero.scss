@@ -1,0 +1,117 @@
+﻿@use 'variables' as *;
+@use 'mixins' as *;
+
+:host {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__inner {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+  padding-top: 36px;
+  padding-bottom: 80px;
+  text-align: center;
+
+  @include up($bp-desktop) {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    padding-top: 54px;
+    padding-bottom: 100px;
+    text-align: left;
+  }
+}
+
+.hero__media {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+
+  img {
+    position: relative;
+    z-index: 1;
+    flex: none;
+    width: min(113.5%, 353px);
+    max-width: none;
+    height: auto;
+    transform: translateX(2%);
+
+    @include up($bp-desktop) {
+      width: 100%;
+      transform: none;
+    }
+  }
+
+  @include up($bp-desktop) {
+    display: block;
+    flex: 0 0 657px;
+    margin-right: -111px;
+  }
+}
+
+app-blue-shape.hero__shape {
+  top: 93px;
+  width: calc(50% + 108px);
+  height: 203px;
+  border-bottom-left-radius: 120px;
+
+  @include up($bp-desktop) {
+    top: 197px;
+    width: calc((100% - #{$container}) / 2 + 334px);
+    height: 353px;
+    border-bottom-left-radius: 200px;
+  }
+}
+
+.hero__content {
+  @include up($bp-desktop) {
+    padding-bottom: 11px;
+    max-width: 480px;
+  }
+}
+
+.hero__title {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.33;
+
+  @include up($bp-desktop) {
+    font-size: 48px;
+    line-height: 1.08;
+  }
+}
+
+.hero__text {
+  max-width: 480px;
+  margin: 16px auto 0;
+  color: $grey;
+  font-size: 15px;
+  line-height: 1.67;
+
+  @include up($bp-desktop) {
+    margin: 24px 0 0;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+}
+
+.hero__actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 32px;
+
+  @include up($bp-desktop) {
+    justify-content: flex-start;
+    gap: 16px;
+  }
+}

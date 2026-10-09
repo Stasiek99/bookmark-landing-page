@@ -1,0 +1,15 @@
+<!-- eslint-disable-next-line @angular-eslint/template/click-events-have-key-events, @angular-eslint/template/interactive-supports-focus -- backdrop click is pointer-only; Esc and the close button cover the keyboard -->
+<dialog
+  #dialog
+  class="modal"
+  [attr.aria-label]="label()"
+  (close)="closed.emit()"
+  (click)="onBackdropClick($event)"
+>
+  <div class="modal__body">
+    <button type="button" class="modal__close" aria-label="Close dialog" (click)="closed.emit()">
+      <app-icon name="close" />
+    </button>
+    <ng-content />
+  </div>
+</dialog>

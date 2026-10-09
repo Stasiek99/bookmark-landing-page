@@ -1,0 +1,14 @@
+<a class="skip-link" href="#main">Skip to main content</a>
+<app-header (hovered)="showModal()" />
+<main id="main">
+  <app-hero />
+  <app-features />
+  <app-download />
+  <app-faq />
+  <app-newsletter />
+</main>
+<app-footer />
+
+<app-modal [open]="modalOpen()" label="Feature highlight" (closed)="modalOpen.set(false)">
+  <app-feature-tabs initialTabId="searching" />
+</app-modal>
